@@ -179,7 +179,7 @@ jobs:
       run: |
         "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /V10 ".\build\ci\installer.iss"
     - name: "Artifacts"
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: "${{ matrix.runner }}-${{ matrix.compiler }}-qt${{ matrix.qt }}"
         path: "${{ github.workspace }}/build/package"
@@ -337,7 +337,7 @@ jobs:
       run: |
         packagesbuild "${{ github.workspace }}/build/ci/installer.pkgproj"
     - name: "Artifacts"
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: "${{ matrix.runner }}-${{ matrix.compiler }}-qt${{ matrix.qt }}"
         path: "${{ github.workspace }}/build/package"
